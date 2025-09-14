@@ -32,26 +32,26 @@ const Details = ({ restaurant }: DetailsProps) => {
         <div
           className={'flex flex-1 justify-center items-center flex-col gap-1'}
         >
-          <FaBook id={'menu'} size={'24'} />
+          <FaBook id={'menu'} size={'2em'} />
           <Label htmlFor={'menu'}>Menu</Label>
         </div>
         <div
           className={'flex flex-1 justify-center items-center flex-col gap-1'}
         >
-          <FaPhoneVolume id={'contact-us'} size={'24'} />
+          <FaPhoneVolume id={'contact-us'} size={'2em'} />
           <Label htmlFor={'contact-us'}>Contact Us</Label>
         </div>
 
         <div
           className={'flex flex-1 justify-center items-center flex-col gap-1'}
         >
-          <FaMapLocationDot id={'location'} size={'24'} />
+          <FaMapLocationDot id={'location'} size={'2em'} />
           <Label htmlFor={'location'}>Location</Label>
         </div>
         <div
           className={'flex flex-1 justify-center items-center flex-col gap-1'}
         >
-          <FaRegHeart id={'favourite'} size={'24'} />
+          <FaRegHeart id={'favourite'} size={'2em'} />
           <Label htmlFor={'favourite'}>Favourite</Label>
         </div>
       </div>
