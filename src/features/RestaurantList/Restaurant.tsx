@@ -1,4 +1,4 @@
-import type { Restaurant } from '@/api/types.ts'
+import type { RestaurantType } from '@/api/types.ts'
 import defaultImage from '@/assets/food.jpg'
 import {
   TypographyH3,
@@ -6,17 +6,20 @@ import {
   TypographySmall,
 } from '@/components/ui/typography.tsx'
 import { useNavigate } from 'react-router'
+import { SEPERATOR } from '@/constants.ts'
 
-const RestaurantComponent = ({
+const Restaurant = ({
   cuisines,
   name,
   suburb,
-  imageLink,
+  // TODO add back image link
+  // imageLink,
   objectId,
   deals,
-}: Restaurant) => {
+}: RestaurantType) => {
   const navigate = useNavigate()
 
+  // TODO display the best deal
   const { dineIn, discount } = deals[0]
 
   const handleClick = () => {
@@ -41,9 +44,11 @@ const RestaurantComponent = ({
       <TypographyH3>{name}</TypographyH3>
       <TypographyLarge>0.5km Away, {suburb}</TypographyLarge>
       <TypographySmall>{cuisines.join(', ')}</TypographySmall>
-      <TypographyLarge>Dine In • Takeaway • Order Online</TypographyLarge>
+      <TypographyLarge>
+        Dine In {SEPERATOR} Takeaway {SEPERATOR} Order Online
+      </TypographyLarge>
     </div>
   )
 }
 
-export default RestaurantComponent
+export default Restaurant

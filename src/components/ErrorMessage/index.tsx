@@ -1,7 +1,7 @@
 import React from 'react'
-import type { ErrorMessageProps } from './types.ts'
+import type { ErrorMessageType } from './types.ts'
 
-const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => (
+const ErrorMessage: React.FC<ErrorMessageType> = ({ message }) => (
   <div className="flex items-center gap-3 bg-red-100 text-red-700 p-4 rounded border border-red-300 shadow-sm">
     <span className="text-2xl" role="img" aria-label="Sad face">
       😢

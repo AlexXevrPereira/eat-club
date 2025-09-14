@@ -1,4 +1,4 @@
-type Deal = {
+export type DealType = {
   objectId: string
   discount: string
   dineIn: 'true' | 'false'
@@ -8,7 +8,7 @@ type Deal = {
   close?: string
 }
 
-export type Restaurant = {
+export type RestaurantType = {
   objectId: string
   name: string
   address1: string
@@ -17,5 +17,5 @@ export type Restaurant = {
   imageLink: string
   open: string
   close: string
-  deals: Deal[]
+  deals: DealType[]
 }
