@@ -3,7 +3,7 @@ import TopBar from '@/components/TopBar'
 
 const AppLayout = () => {
   return (
-    <div className="m-4">
+    <div className="mx-4">
       <TopBar />
       <Outlet />
     </div>

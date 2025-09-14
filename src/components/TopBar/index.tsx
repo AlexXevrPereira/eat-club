@@ -4,7 +4,11 @@ import { Button } from '@/components/ui/button.tsx'
 
 const TopBar = () => {
   return (
-    <div className={'flex flex-1 flex-row items-center justify-between mx-2'}>
+    <div
+      className={
+        'flex flex-1 flex-row items-center justify-between px-2 sticky top-0 z-20 bg-white'
+      }
+    >
       <Button variant={'ghost'} size={'icon'} className={'size-15'}>
         <TbUser className={'size-9'} />
       </Button>
