@@ -1,7 +1,13 @@
 import { Input } from '@/components/ui/input.tsx'
 import { TbSearch } from 'react-icons/tb'
+import React from 'react'
 
-const RestaurantFilter = () => {
+type RestaurantFilterProps = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  value: string
+}
+
+const RestaurantFilter = ({ onChange, value }: RestaurantFilterProps) => {
   return (
     <div
       className={
@@ -9,6 +15,8 @@ const RestaurantFilter = () => {
       }
     >
       <Input
+        onChange={onChange}
+        value={value}
         id={'search'}
         type="text"
         placeholder="Search"
