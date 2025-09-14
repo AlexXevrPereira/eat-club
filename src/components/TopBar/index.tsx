@@ -4,19 +4,17 @@ import { Button } from '@/components/ui/button.tsx'
 
 const TopBar = () => {
   return (
-    <div
-      className={
-        'flex flex-1 flex-row items-center justify-between px-2 sticky top-0 z-20 bg-white'
-      }
-    >
-      <Button variant={'ghost'} size={'icon'} className={'size-15'}>
-        <TbUser className={'size-9'} />
-      </Button>
-      <FaPizzaSlice size={'2em'} color={'darkred'} />
-      <Button variant={'ghost'} size={'icon'} className={'size-15'}>
-        <TbAdjustmentsHorizontal className={'size-9'} />
-      </Button>
-    </div>
+    <header className="bg-background sticky top-0 z-50 flex w-full items-center">
+      <div className="flex h-(--header-height) w-full items-center gap-2 px-4 justify-between">
+        <Button variant={'ghost'} size={'icon'} className={'h-8 w-8'}>
+          <TbUser className={'size-8'} />
+        </Button>
+        <FaPizzaSlice size={'2em'} color={'darkred'} />
+        <Button variant={'ghost'} size={'icon'} className={'h-8 w-8'}>
+          <TbAdjustmentsHorizontal className={'size-8'} />
+        </Button>
+      </div>
+    </header>
   )
 }
 
