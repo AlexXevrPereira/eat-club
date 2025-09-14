@@ -26,9 +26,26 @@ describe('filterByNameAndCuisine', () => {
       },
     ])
   })
+
   it('should be case insensitive when filtering by name', () => {
     expect(filterByNameAndCuisine('sushi', restaurants)).toEqual([
       { name: 'Sushi Place', cuisines: ['Japanese', 'Asian'] },
     ])
+  })
+
+  it('should return all the restaurants by cuisine', () => {
+    expect(filterByNameAndCuisine('Italian', restaurants)).toEqual([
+      { name: 'Pizza House', cuisines: ['Italian'] },
+    ])
+  })
+
+  it('should not be case sensitive when searching for cuisines', () => {
+    expect(filterByNameAndCuisine('italian', restaurants)).toEqual([
+      { name: 'Pizza House', cuisines: ['Italian'] },
+    ])
+  })
+
+  it('should return an empty array if no restaurants match the cuisine', () => {
+    expect(filterByNameAndCuisine('Mexican', restaurants)).toEqual([])
   })
 })
