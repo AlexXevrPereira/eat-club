@@ -16,6 +16,9 @@ import { SEPERATOR } from '@/constants.ts'
 import Deal from '@/features/RestaurantDetails/Deal.tsx'
 import type { RestaurantType } from '@/api/types.ts'
 import brokenImage from '@/assets/broken-image.png'
+import { Button } from '@/components/ui/button.tsx'
+import { TbChevronLeft } from 'react-icons/tb'
+import { useNavigate } from 'react-router'
 
 type DetailsProps = {
   restaurant: RestaurantType
@@ -33,8 +36,21 @@ const Details = ({ restaurant }: DetailsProps) => {
     deals,
     imageLink,
   } = restaurant
+  const navigate = useNavigate()
+  const handleClickBack = () => {
+    navigate(-1)
+  }
+
   return (
     <div className={'max-w-3xl mx-auto p-4'}>
+      <Button
+        variant={'link'}
+        className={'cursor-pointer'}
+        onClick={handleClickBack}
+      >
+        <TbChevronLeft />
+        Back
+      </Button>
       <div
         className={
           'py-4 flex justify-center h-[300px] sm:h-[520px] min-w-[380px]'

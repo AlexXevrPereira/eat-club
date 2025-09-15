@@ -29,7 +29,7 @@ const Restaurant = ({
       key={objectId}
       onClick={handleClick}
       className={
-        '2xl:max-w-[500px] lg:max-w-[700px] md:max-w-[500px] max-w-[500px] min-w-[380px]'
+        'cursor-pointer 2xl:max-w-[500px] lg:max-w-[700px] md:max-w-[500px] max-w-[500px] min-w-[380px]'
       }
     >
       <div
