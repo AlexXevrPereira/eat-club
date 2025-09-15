@@ -15,18 +15,43 @@ import {
 import { SEPERATOR } from '@/constants.ts'
 import Deal from '@/features/RestaurantDetails/Deal.tsx'
 import type { RestaurantType } from '@/api/types.ts'
-import foodImage from '@/assets/food.jpg'
+import brokenImage from '@/assets/broken-image.png'
 
 type DetailsProps = {
   restaurant: RestaurantType
 }
 
 const Details = ({ restaurant }: DetailsProps) => {
-  const { cuisines, close, address1, name, suburb, open, deals } = restaurant
+  const {
+    objectId,
+    cuisines,
+    close,
+    address1,
+    name,
+    suburb,
+    open,
+    deals,
+    imageLink,
+  } = restaurant
   return (
-    <div>
-      <div className={'py-4 flex justify-center min-h-[240px]'}>
-        <img src={foodImage} alt={name} className={'rounded-md'} />
+    <div className={'max-w-3xl mx-auto p-4'}>
+      <div
+        className={
+          'py-4 flex justify-center h-[300px] sm:h-[520px] min-w-[380px]'
+        }
+      >
+        <img
+          id={`image-${objectId}`}
+          src={imageLink}
+          alt={name}
+          className={'rounded-md'}
+          onError={() => {
+            const image = document.getElementById(
+              `image-${objectId}`
+            ) as HTMLImageElement
+            image.src = brokenImage
+          }}
+        />
       </div>
       <div className={'flex flex-1 flex-row justify-between py-4 border-b-1'}>
         <div
