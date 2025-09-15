@@ -21,7 +21,7 @@ const RestaurantList = () => {
 
   return (
     <>
-      <div className={'flex flex-col gap-4'}>
+      <div className={'flex flex-col gap-4 mb-4'}>
         {status === 'pending' ? (
           <RestaurantListLoading />
         ) : status === 'error' ? (
