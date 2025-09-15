@@ -15,18 +15,18 @@ import {
 import { SEPERATOR } from '@/constants.ts'
 import Deal from '@/features/RestaurantDetails/Deal.tsx'
 import type { RestaurantType } from '@/api/types.ts'
+import foodImage from '@/assets/food.jpg'
 
 type DetailsProps = {
   restaurant: RestaurantType
 }
 
 const Details = ({ restaurant }: DetailsProps) => {
-  const { cuisines, close, address1, imageLink, name, suburb, open, deals } =
-    restaurant
+  const { cuisines, close, address1, name, suburb, open, deals } = restaurant
   return (
-    <>
-      <div className={'flex flex-1 justify-center items-center py-4'}>
-        <img src={imageLink} alt={name} className={'rounded-md'} />
+    <div>
+      <div className={'py-4 flex justify-center min-h-[240px]'}>
+        <img src={foodImage} alt={name} className={'rounded-md'} />
       </div>
       <div className={'flex flex-1 flex-row justify-between py-4 border-b-1'}>
         <div
@@ -76,7 +76,7 @@ const Details = ({ restaurant }: DetailsProps) => {
       {deals.map((data) => (
         <Deal key={data.objectId} {...data} />
       ))}
-    </>
+    </div>
   )
 }
 

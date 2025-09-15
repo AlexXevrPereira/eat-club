@@ -27,24 +27,26 @@ const RestaurantList = () => {
         ) : status === 'error' ? (
           <ErrorMessage message={error.message} />
         ) : (
-          <div className={'h-full'}>
+          <div className={'flex flex-1 flex-col items-center'}>
             <RestaurantFilter
               value={searchRestaurant}
               onChange={handleSearchRestaurant}
             />
-            <div
-              className={
-                'flex flex-1 flex-col gap-4 justify-center items-center'
-              }
-            >
-              {filterByNameAndCuisine(
-                debouncedSearchRestaurant,
-                restaurants
-              ).map((data) => {
-                return <Restaurant key={data.objectId} {...data} />
-              })}
+            <div>
+              <div
+                className={
+                  'grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4'
+                }
+              >
+                {filterByNameAndCuisine(
+                  debouncedSearchRestaurant,
+                  restaurants
+                ).map((data) => {
+                  return <Restaurant key={data.objectId} {...data} />
+                })}
+              </div>
+              <div>{isFetching && <RestaurantListLoading />}</div>
             </div>
-            <div>{isFetching && <RestaurantListLoading />}</div>
           </div>
         )}
       </div>

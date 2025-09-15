@@ -25,21 +25,31 @@ const Restaurant = ({
   }
 
   return (
-    <div key={objectId} onClick={handleClick} className={'w-full'}>
-      <div className={'relative flex-1 flex h-[240px] '}>
-        <img
-          id={`image-${objectId}`}
-          src={imageLink}
-          alt={name}
-          width={'100%'}
-          className={'rounded-sm'}
-          onError={() => {
-            const image = document.getElementById(
-              `image-${objectId}`
-            ) as HTMLImageElement
-            image.src = brokenImage
-          }}
-        />
+    <div
+      key={objectId}
+      onClick={handleClick}
+      className={
+        '2xl:max-w-[500px] lg:max-w-[700px] md:max-w-[500px] max-w-[500px] min-w-[380px]'
+      }
+    >
+      <div
+        className={
+          'relative flex h-[300px] overflow-hidden rounded-xl border-2'
+        }
+      >
+        <div className={'flex flex-1 items-center rounder-xl'}>
+          <img
+            id={`image-${objectId}`}
+            src={imageLink}
+            alt={name}
+            onError={() => {
+              const image = document.getElementById(
+                `image-${objectId}`
+              ) as HTMLImageElement
+              image.src = brokenImage
+            }}
+          />
+        </div>
         <div className={'flex flex-1 flex-col absolute top-2 left-2 gap-2'}>
           {deals.map((deal) => {
             return <Deal key={deal.objectId} {...deal} />
