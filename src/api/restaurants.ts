@@ -2,8 +2,7 @@ import type { RestaurantType } from '@/api/types.ts'
 import { useQuery } from '@tanstack/react-query'
 import sortRestaurantDeals from '@/api/sortRestaurantDeals.ts'
 
-const url =
-  'https://corsproxy.io/?url=https://eccdn.com.au/misc/challengedata.json'
+const url = '/api'
 
 const fetchRestaurants = async () => {
   try {
